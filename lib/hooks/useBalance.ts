@@ -8,7 +8,7 @@ export function useBalance(wallet: ethers.Wallet | null) {
     ["balance", wallet?.address],
     async () => {
       if (!wallet) return ethers.BigNumber.from(0);
-      return wallet.getBalance();
+      return wallet.getBalance("latest");
     },
     {
       staleTime: ONE_MINUTE,

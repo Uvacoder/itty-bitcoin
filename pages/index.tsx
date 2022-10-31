@@ -33,13 +33,13 @@ const Home: NextPageWithLayout = () => {
     <div className="flex flex-col flex-1 items-center py-32">
       <section
         id="first-section"
-        className="font-gambetta mx-auto w-full md:max-w-lg lg:max-w-xl px-8 sm:px-14 md:px-0 transition-all duration-75 dark:text-slate-200 text-slate-800"
+        className="font-gambetta mx-auto w-full md:max-w-lg lg:max-w-xl px-8 sm:px-14 md:px-0 transition-all duration-75 text-slate-200"
       >
         <motion.h1
           initial={{ opacity: 0, translateX: -5 }}
           animate={{ opacity: 1, translateX: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-slate-900 dark:text-slate-200 text-[20px] font-semibold tracking-wide"
+          className="text-slate-200 text-[20px] font-semibold tracking-wide"
         >
           Tiny Wallet
         </motion.h1>
@@ -47,7 +47,7 @@ const Home: NextPageWithLayout = () => {
           initial={{ opacity: 0, translateX: 5 }}
           animate={{ opacity: 1, translateX: 0 }}
           transition={{ duration: 0.5 }}
-          className="pt-2 text-md text-slate-700/70 dark:text-slate-200/70"
+          className="pt-2 text-md text-slate-200/70"
         >
           A simple, secure, and private way to store your crypto.
         </motion.p>
@@ -58,7 +58,7 @@ const Home: NextPageWithLayout = () => {
         initial={{ opacity: 0, translateX: -5 }}
         animate={{ opacity: 1, translateX: 0 }}
         transition={{ duration: 0.5 }}
-        className="mt-4 font-gambetta mx-auto w-full md:max-w-lg lg:max-w-xl px-8 sm:px-14 md:px-0 transition-all duration-75 dark:text-slate-200 text-slate-800"
+        className="mt-4 font-gambetta mx-auto w-full md:max-w-lg lg:max-w-xl px-8 sm:px-14 md:px-0 transition-all duration-75 text-slate-200"
       >
         <form onSubmit={handleSubmit}>
           <div className="relative flex items-center">
@@ -66,11 +66,12 @@ const Home: NextPageWithLayout = () => {
               Private Key
             </Label>
             <input
+              role="textbox"
               type="password"
               id="privateKey"
               name="privateKey"
               placeholder="Insert your private key"
-              className="ml-4 w-full px-4 py-2 text-sm text-slate-900 dark:text-yellow-300 bg-stone-100 dark:bg-stone-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50 placeholder:text-stone-500"
+              className="ml-4 w-full px-4 py-2 text-sm text-yellow-300 bg-stone-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50 placeholder:text-stone-500"
             />
             <span className="absolute top-[3rem] left-[6rem] text-red-600">
               {privateKeyError}
@@ -79,7 +80,7 @@ const Home: NextPageWithLayout = () => {
           <div className="flex justify-end">
             <button
               type="submit"
-              className="mt-4 px-4 py-2 text-sm text-slate-900 dark:text-yellow-300 bg-stone-100 dark:bg-stone-800 rounded-md transition-colors duration-300 dark:hover:bg-yellow-300 dark:hover:text-stone-900 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50 placeholder:text-stone-500"
+              className="mt-4 px-4 py-2 text-sm text-yellow-300 bg-stone-800 rounded-md transition-colors duration-300 hover:bg-yellow-300 hover:text-stone-900 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50 placeholder:text-stone-500"
             >
               Submit
             </button>
@@ -93,7 +94,7 @@ const Home: NextPageWithLayout = () => {
             initial={{ opacity: 0, translateX: -5 }}
             animate={{ opacity: 1, translateX: 0 }}
             transition={{ duration: 0.5 }}
-            className="mt-4 font-gambetta mx-auto w-full md:max-w-lg lg:max-w-xl px-8 sm:px-14 md:px-0 transition-all duration-75 dark:text-slate-200 text-slate-800"
+            className="mt-4 font-gambetta mx-auto w-full md:max-w-lg lg:max-w-xl px-8 sm:px-14 md:px-0 transition-all duration-75 text-slate-200"
           >
             <div className="flex items-center justify-between">
               <p className="whitespace-nowrap">Address</p>
@@ -111,7 +112,7 @@ const Home: NextPageWithLayout = () => {
             initial={{ opacity: 0, translateX: 5 }}
             animate={{ opacity: 1, translateX: 0 }}
             transition={{ duration: 0.5 }}
-            className="mt-4 font-gambetta mx-auto w-full md:max-w-lg lg:max-w-xl px-8 sm:px-14 md:px-0 transition-all duration-75 dark:text-slate-200 text-slate-800"
+            className="mt-4 font-gambetta mx-auto w-full md:max-w-lg lg:max-w-xl px-8 sm:px-14 md:px-0 transition-all duration-75 text-slate-200"
           >
             <form onSubmit={handleAddTokenSubmit}>
               <div className="relative flex items-center">
@@ -129,7 +130,7 @@ const Home: NextPageWithLayout = () => {
                   id="add-token-input"
                   name="token"
                   placeholder="Enter token address"
-                  className="ml-4 w-full px-4 py-2 text-sm text-slate-900 dark:text-yellow-300 bg-stone-100 dark:bg-stone-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50 placeholder:text-stone-500"
+                  className="ml-4 w-full px-4 py-2 text-sm text-yellow-300 bg-stone-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50 placeholder:text-stone-500"
                 />
                 <span className="absolute top-[3rem] left-[9rem] text-red-600">
                   {tokenError}
@@ -139,7 +140,7 @@ const Home: NextPageWithLayout = () => {
                 <p>Token Count: {tokenAddresses.length}</p>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-sm text-slate-900 dark:text-yellow-300 bg-stone-100 dark:bg-stone-800 rounded-md transition-colors duration-300 dark:hover:bg-yellow-300 dark:hover:text-stone-900 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50 placeholder:text-stone-500"
+                  className="px-4 py-2 text-sm text-yellow-300 bg-stone-800 rounded-md transition-colors duration-300 hover:bg-yellow-300 hover:text-stone-900 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50 placeholder:text-stone-500"
                 >
                   Add
                 </button>
@@ -155,7 +156,7 @@ const Home: NextPageWithLayout = () => {
                   <Tabs.Trigger value="Transfer">Transfer</Tabs.Trigger>
                 </Tabs.List>
                 <Tabs.Content value="balances">
-                  <section className="mt-4 font-gambetta mx-auto w-full md:max-w-lg lg:max-w-xl px-8 sm:px-14 md:px-0 transition-all duration-75 dark:text-slate-200 text-slate-800">
+                  <section className="mt-4 font-gambetta mx-auto w-full md:max-w-lg lg:max-w-xl px-8 sm:px-14 md:px-0 transition-all duration-75 text-slate-200">
                     <motion.div className="py-1 px-4 flex flex-col overflow-y-scroll max-h-48 h-full items-center justify-between rounded-md border border-stone-700">
                       {tokens.map((token) => (
                         <div
@@ -177,7 +178,7 @@ const Home: NextPageWithLayout = () => {
                   </section>
                 </Tabs.Content>
                 <Tabs.Content value="history">
-                  <section className="mt-4 font-gambetta mx-auto w-full md:max-w-lg lg:max-w-xl px-8 sm:px-14 md:px-0 transition-all duration-75 dark:text-slate-200 text-slate-800">
+                  <section className="mt-4 font-gambetta mx-auto w-full md:max-w-lg lg:max-w-xl px-8 sm:px-14 md:px-0 transition-all duration-75 text-slate-200">
                     <motion.div
                       layout
                       className="py-1 px-4 flex flex-col overflow-y-scroll max-h-48 h-full items-center justify-between rounded-md border border-stone-700"
@@ -188,6 +189,7 @@ const Home: NextPageWithLayout = () => {
                         ) : (
                           transferHistory.map((tx) => (
                             <div
+                              role="row"
                               key={tx.blockNumber}
                               className="py-2 flex flex-col w-full"
                             >
@@ -219,11 +221,12 @@ const Home: NextPageWithLayout = () => {
                 <Tabs.Content value="Transfer">
                   <section
                     id="transfer-section"
-                    className="mt-4 font-gambetta mx-auto w-full md:max-w-lg lg:max-w-xl px-8 sm:px-14 md:px-0 transition-all duration-75 dark:text-slate-200 text-slate-800"
+                    className="mt-4 font-gambetta mx-auto w-full md:max-w-lg lg:max-w-xl px-8 sm:px-14 md:px-0 transition-all duration-75 text-slate-200"
                   >
                     <form onSubmit={handleTransferSubmit}>
                       <div className="relative flex items-center">
                         <Label
+                          data-testid="transfer-token-input-label"
                           htmlFor="transfer-token-input"
                           className="flex items-center whitespace-nowrap group"
                         >
@@ -234,7 +237,7 @@ const Home: NextPageWithLayout = () => {
                           id="transfer-token-input"
                           name="token"
                           placeholder="Enter token address to transfer"
-                          className="ml-4 w-full px-4 py-2 text-sm text-slate-900 dark:text-yellow-300 bg-stone-100 dark:bg-stone-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50 placeholder:text-stone-500"
+                          className="ml-4 w-full px-4 py-2 text-sm text-yellow-300 bg-stone-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50 placeholder:text-stone-500"
                         />
                         <span className="absolute top-[3rem] left-[9rem] text-red-600">
                           {tokenError}
@@ -252,7 +255,7 @@ const Home: NextPageWithLayout = () => {
                           id="transfer-recipient-input"
                           name="recipient"
                           placeholder="Enter recipient address"
-                          className="ml-4 w-full px-4 py-2 text-sm text-slate-900 dark:text-yellow-300 bg-stone-100 dark:bg-stone-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50 placeholder:text-stone-500"
+                          className="ml-4 w-full px-4 py-2 text-sm text-yellow-300 bg-stone-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50 placeholder:text-stone-500"
                         />
                         <span className="absolute top-[3rem] left-[9rem] text-red-600">
                           {tokenError}
@@ -270,7 +273,7 @@ const Home: NextPageWithLayout = () => {
                           id="transfer-amount-input"
                           name="amount"
                           placeholder="Enter amount to send"
-                          className="ml-4 w-full px-4 py-2 text-sm text-slate-900 dark:text-yellow-300 bg-stone-100 dark:bg-stone-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50 placeholder:text-stone-500"
+                          className="ml-4 w-full px-4 py-2 text-sm text-yellow-300 bg-stone-800 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50 placeholder:text-stone-500"
                         />
                         <span className="absolute top-[3rem] left-[9rem] text-red-600">
                           {tokenError}
@@ -279,7 +282,7 @@ const Home: NextPageWithLayout = () => {
                       <div className="mt-4 flex items-center justify-end">
                         <button
                           type="submit"
-                          className="px-4 py-2 text-sm text-slate-900 dark:text-yellow-300 bg-stone-100 dark:bg-stone-800 rounded-md transition-colors duration-300 dark:hover:bg-yellow-300 dark:hover:text-stone-900 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50 placeholder:text-stone-500"
+                          className="px-4 py-2 text-sm text-yellow-300 bg-stone-800 rounded-md transition-colors duration-300 hover:bg-yellow-300 hover:text-stone-900 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50 placeholder:text-stone-500"
                         >
                           Transfer
                         </button>

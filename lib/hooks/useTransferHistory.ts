@@ -50,6 +50,8 @@ export function useTransferHistory(
       return transfers.flat();
     },
     {
+      refetchInterval: 5000,
+      refetchIntervalInBackground: true,
       keepPreviousData: true,
       staleTime: 1000,
       enabled: wallet !== null,

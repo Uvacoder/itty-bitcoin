@@ -1,4 +1,4 @@
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import BigNumber from "bignumber.js";
 import { ethers } from "ethers";
 import { FormEvent } from "react";
@@ -6,6 +6,8 @@ import { ERC20_ABI } from "../abis/Token";
 import { bnToEthers, ethersToBn } from "../bignumber";
 
 export function useTransfer(wallet: ethers.Wallet | null) {
+  const queryClient = useQueryClient();
+
   const mutation = useMutation(
     ["transfer", wallet?.address],
     async ({
@@ -26,6 +28,11 @@ export function useTransfer(wallet: ethers.Wallet | null) {
       );
       await tx.wait();
       return true;
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries(["history"]);
+      },
     }
   );
 

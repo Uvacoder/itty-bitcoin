@@ -10,7 +10,7 @@ const globby = require("globby");
       const path = page.replace("pages", "").replace(".tsx", "");
       const route = path === "/index" ? "" : path;
 
-      return `https://alexfertel.vercel.app${route}`;
+      return `https://tiny-wallet.vercel.app${route}`;
     })
     .join("\n");
 

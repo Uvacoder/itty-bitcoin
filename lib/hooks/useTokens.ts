@@ -1,7 +1,7 @@
 import { ethers } from "ethers";
 import { useQuery } from "@tanstack/react-query";
 import { ethersToBn } from "../bignumber";
-import { DEFAULT_DECIMALS, ONE_MINUTE } from "../constants";
+import { DEFAULT_DECIMALS, FIVE_SECONDS } from "../constants";
 import { getProvider } from "../network";
 import { Token } from "../types";
 import { ERC20_ABI } from "../abis/Token";
@@ -40,8 +40,9 @@ export function useTokens(
       );
     },
     {
+      refetchInterval: FIVE_SECONDS,
+      refetchIntervalInBackground: true,
       keepPreviousData: true,
-      staleTime: ONE_MINUTE,
       enabled: wallet !== null && tokenAddresses.length > 0,
     }
   );

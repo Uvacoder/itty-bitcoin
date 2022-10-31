@@ -1,7 +1,7 @@
 export const ACCOUNTS = { JEFF: 0, ALICE: 1, BOB: 2, LP_KYLE: 3 };
 
 // Mainnet block to fork from.
-export const INIT_BLOCK = 15326281; // Aug-12-2022 09:38:59 AM +UTC
+export const INIT_BLOCK = 15867167; // Oct-31-2022 09:32:59 AM +UTC
 
 export const WHALE_BY_TOKEN: Record<string, string> = {
   // stETH
@@ -14,4 +14,5 @@ export const ETH_WHALE = "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045";
 export const TOKEN_ADDRESSES: Record<string, string> = {
   DAI: "0x6b175474e89094c44da98b954eedeac495271d0f",
   USDC: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+  TUSD: "0x80b4da93fd4ea2e8b8db79cadd0f3ad81afd4a89",
 };

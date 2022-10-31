@@ -107,4 +107,32 @@ describe("Index Page", () => {
         });
     });
   });
+
+  it("should allow users to use TUSD", function () {
+    const tiny = new ethers.Contract(
+      TOKEN_ADDRESSES.TUSD,
+      ["function balanceOf(address) external view returns (uint256)"],
+      this.jeff
+    );
+
+    cy.mintTokens({
+      tokenAddress: TOKEN_ADDRESSES.TUSD,
+      recipient: this.jeffAddress,
+      amount: "10",
+    });
+
+    visitPage("/", this.jeff).then(async () => {
+      addPKFromWallet(this.jeff);
+      cy.findByRole("textbox", { name: /token address/i }).type(
+        TOKEN_ADDRESSES.TUSD
+      );
+      cy.findByRole("button", { name: /Add/i }).click();
+      cy.findByText(TOKEN_ADDRESSES.TUSD)
+        .should("exist")
+        .then(async () => {
+          const balance = await tiny.balanceOf(this.jeffAddress);
+          expect(balance.toString()).to.be.equal("10000000000000000000");
+        });
+    });
+  });
 });

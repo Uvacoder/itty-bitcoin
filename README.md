@@ -44,6 +44,8 @@ and connecting the app to it.
 
 All the tests are e2e tests in the interest of time. You can find them under the `cypress` folder.
 
+There is a test that checks that `TinyUSD`, which is the dummy ERC20 contract deployed works.
+
 ## Considerations
 
 Task #6 of the challenge says:

@@ -17,15 +17,25 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 * radix-ui
 * hardhat
 
-## Getting Started
+## Development
 
-First, run the development server:
+Install it and run:
 
 ```bash
+npm install
+npm run dev
+# or
+yarn
 yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Environment
+
+1. Create a local `.env` file
+2. Set `NEXT_PUBLIC_ALCHEMY_KEY` and `TEST_ALCHEMY_KEY` to a valid Alchemy API key
+3. Set `TEST_MNEMONIC` to the mnemonic of the testchain deployer
 
 ## Tests
 
